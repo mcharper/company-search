@@ -1,0 +1,10 @@
+<h2>{{companyName}}</h2>
+
+<p>{{companyNumberLabel}} <strong>{{companyNumber}}</strong></p>
+
+<ul>
+  <li *ngFor="let officer of officersList">
+    <span class="name">{{officer.name}}</span>
+    <span>{{officer.role}}</span>
+  </li>
+</ul>
