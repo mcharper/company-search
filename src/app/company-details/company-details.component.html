@@ -1,19 +1,19 @@
-<h2>{{companyName}}</h2>
+<h2>{{ companyDetails.title }}</h2>
 
-<p>{{companyNumberLabel}} <strong>{{companyNumber}}</strong></p>
+<p>{{ companyNumberLabel }} <strong>{{ companyDetails.company_number }}</strong></p>
 
 <dl>
-  <dt>{{companyAddressLabel}}</dt>
-  <dd>{{companyAddress}}</dd>
+  <dt>{{ companyAddressLabel }}</dt>
+  <dd>{{ companyDetails.address_snippet }}</dd>
 
-  <dt>{{companyStatusLabel}}</dt>
-  <dd>{{companyStatus}}</dd>
+  <dt>{{ companyStatusLabel }}</dt>
+  <dd>{{ companyDetails.company_status }}</dd>
 
-  <dt>{{companyTypeLabel}}</dt>
-  <dd>{{companyType}}</dd>
+  <dt>{{ companyTypeLabel }}</dt>
+  <dd>{{ companyDetails.company_type }}</dd>
 
-  <dt>{{incorporationDateLabel}}</dt>
-  <dd>{{incorporationDate}}</dd>
+  <dt>{{ incorporationDateLabel }}</dt>
+  <dd>{{ humaniseDate(companyDetails.date_of_creation) }}</dd>
 
-  <p>Link to list officers</p>
+  <a href="/officers-list/{{companyNumber}}">List officers</a>
 </dl>

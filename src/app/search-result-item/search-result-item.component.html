@@ -1,9 +1,11 @@
-<h2>{{companyName}}</h2>
+<h2>
+  <a href="/company-details/{{companyDetails.company_number}}">{{companyDetails.title}}</a>
+</h2>
 
 <p>
-  <strong>{{companyNumber}}</strong> - {{incorporationDateStatement}}
+  <strong>{{companyDetails.company_number}}</strong> - {{companyDetails.description}}
 </p>
 
-<p>{{companyAddress}}</p>
+<p>{{companyDetails.address_snippet}}</p>
 
 

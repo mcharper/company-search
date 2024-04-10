@@ -7,7 +7,7 @@ import { OfficersListComponent } from './officers-list/officers-list.component';
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'search-results', component: SearchResultsComponent },
-  { path: 'company-details', component: CompanyDetailsComponent },
-  { path: 'officers-list', component: OfficersListComponent },
+  { path: 'search-results/:fragment', component: SearchResultsComponent },
+  { path: 'company-details/:companynumber', component: CompanyDetailsComponent },
+  { path: 'officers-list/:companynumber', component: OfficersListComponent },
 ];

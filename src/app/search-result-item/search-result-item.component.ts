@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search-result-item',
@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './search-result-item.component.css'
 })
 export class SearchResultItemComponent {
-  companyName: string = "companyName";
-  companyNumber: string = "companyNumber";
-  incorporationDateStatement: string = "incorporationDateStatement";
-  companyAddress: string = "companyAddress";
+  @Input() companyDetails: any;
+
+  ngOnInit() {
+    console.log(this.companyDetails);
+  }
 }

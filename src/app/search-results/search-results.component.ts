@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SearchResultItemComponent } from '../search-result-item/search-result-item.component';
 import { CompanySearchService } from '../services/company-search.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
@@ -11,11 +12,15 @@ import { CompanySearchService } from '../services/company-search.service';
   styleUrl: './search-results.component.css'
 })
 export class SearchResultsComponent {
-  constructor(private companySearchService: CompanySearchService) {
-    this.searchResults = companySearchService.getCompaniesByName();
-  }
-
-  searchResults: any;
+  fragment: string = "";
   title: string = "SEARCH RESULTS";
-  list: string[] = ["a", "b"]
+  searchResults: any[] = [];
+
+  constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService) { }
+
+  ngOnInit() {
+    this.fragment = this.route.snapshot.paramMap.get('fragment') || "";
+    this.companySearchService.getCompaniesByFragment(this.fragment).subscribe((data: any) => this.searchResults = data.items);
+    // this.companySearchService.getOfficersList("10241297").subscribe((data: any[]) => console.log(data));
+  }
 }

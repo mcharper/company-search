@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OfficersListComponent } from './officers-list.component';
+import { ActivatedRoute } from '@angular/router';
+import { MockInstance } from 'ng-mocks';
 
 describe('OfficersListComponent', () => {
   let component: OfficersListComponent;
@@ -9,9 +11,13 @@ describe('OfficersListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OfficersListComponent]
-    })
-    .compileComponents();
-    
+    }).compileComponents();
+
+    MockInstance(ActivatedRoute, 'snapshot', jasmine.createSpy(), 'get')
+      .and.returnValue({
+        paramMap: new Map([['companynumber', '06500244']]),
+      });
+
     fixture = TestBed.createComponent(OfficersListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

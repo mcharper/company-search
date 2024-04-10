@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchResultsComponent } from './search-results.component';
+import { ActivatedRoute } from '@angular/router';
+import { MockInstance } from 'ng-mocks';
 
 describe('SearchResultsComponent', () => {
   let component: SearchResultsComponent;
@@ -11,6 +13,11 @@ describe('SearchResultsComponent', () => {
       imports: [SearchResultsComponent]
     })
       .compileComponents();
+
+    MockInstance(ActivatedRoute, 'snapshot', jasmine.createSpy(), 'get')
+      .and.returnValue({
+        paramMap: new Map([['companynumber', '06500244']]),
+      });
 
     fixture = TestBed.createComponent(SearchResultsComponent);
     component = fixture.componentInstance;
