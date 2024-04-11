@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { SearchResultItemComponent } from '../search-result-item/search-result-item.component';
 import { CompanySearchService } from '../services/company-search.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-search-results',
@@ -13,14 +14,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchResultsComponent {
   fragment: string = "";
-  title: string = "SEARCH RESULTS";
   searchResults: any[] = [];
+  title: string = "SEARCH RESULTS";
+  goBackButtonLabel = "Back";
 
-  constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService) { }
+  constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService, private location: Location) { }
 
   ngOnInit() {
     this.fragment = this.route.snapshot.paramMap.get('fragment') || "";
     this.companySearchService.getCompaniesByFragment(this.fragment).subscribe((data: any) => this.searchResults = data.items);
   }
 
+  goBack() {
+    this.location.back();
+  }
 }

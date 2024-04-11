@@ -12,3 +12,11 @@ li {
   display: block;
   font-weight: bold;
 }
+
+button {
+  border-color: #635362;
+  border-radius: 0.5rem;
+  color: black;
+  margin-top: 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}

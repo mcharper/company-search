@@ -4,12 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CompanySearchService } from '../services/company-search.service';
 import { MockCompanySearchService } from '../../../mocks/MockCompanySearchService';
+import { MockLocationService } from '../../../mocks/MockLocationService';
 
 describe('SearchResultsComponent', () => {
   let component: SearchResultsComponent;
   let fixture: ComponentFixture<SearchResultsComponent>;
 
-  var service = new MockCompanySearchService();
+  var mockCompanySearchservice = new MockCompanySearchService();
+  var mockLocationService = new MockLocationService();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,7 +31,11 @@ describe('SearchResultsComponent', () => {
         },
         {
           provide: CompanySearchService,
-          useValue: service
+          useValue: mockCompanySearchservice
+        },
+        {
+          provide: Location,
+          useValue: mockLocationService
         }
       ]
     }).compileComponents();

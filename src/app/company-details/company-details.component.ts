@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CompanySearchService } from '../services/company-search.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-company-details',
@@ -15,11 +16,12 @@ export class CompanyDetailsComponent {
   companyStatusLabel = "Company status";
   companyTypeLabel = "Company type"
   incorporationDateLabel = "Incorporated on";
+  goBackButtonLabel = "Back";
 
   companyNumber: string = "";
   companyDetails: any;
 
-  constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService) { }
+  constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService, private location: Location) { }
 
   ngOnInit() {
     this.companyNumber = this.route.snapshot.paramMap.get('companynumber') || "";
@@ -42,5 +44,9 @@ export class CompanyDetailsComponent {
     };
 
     return (companyType in companyTypeDescriptions) ? companyTypeDescriptions[companyType] : companyType;
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
