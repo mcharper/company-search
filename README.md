@@ -4,13 +4,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
-<img src="docs/images/Search.png" alt="Company Search" style="border: 2px solid  gray;">
+![Company Search](docs/images/Search.png)
 
-<img src="docs/images/SearchResults.png" alt="Search Results"  style="border: 2px solid  gray;">
+![Search Results](docs/images/SearchResults.png)
 
-<img src="docs/images/CompanyDetails.png" alt="Company Details" style="border: 2px solid  gray;">
+![Company Details](docs/images/CompanyDetails.png)
 
-<img src="docs/images/OfficersList.png" alt="Officers List" style="border: 2px solid  gray;">
+![Officers List](docs/images/OfficersList.png)
 
 ## Development server
 
