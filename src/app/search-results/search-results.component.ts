@@ -17,6 +17,7 @@ export class SearchResultsComponent {
   searchResults: any[] = [];
   title: string = "SEARCH RESULTS";
   goBackButtonLabel = "Back";
+  zeroResultsMessage = "Sorry, we did not find any results to match your query.";
 
   constructor(private route: ActivatedRoute, private companySearchService: CompanySearchService, private location: Location) { }
 

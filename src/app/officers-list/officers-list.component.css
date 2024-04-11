@@ -8,6 +8,10 @@ li {
   margin-bottom: 1rem;
 }
 
+li > span {
+  text-transform: capitalize;
+}
+
 .name {
   display: block;
   font-weight: bold;

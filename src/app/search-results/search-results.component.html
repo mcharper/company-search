@@ -7,7 +7,7 @@
 </ul>
 
 <div *ngIf="!searchResults">
-  <p>Sorry, we did not find any results to match your query.</p>
+  <p>{{zeroResultsMessage}}</p>
 </div>
 
 <button (click)="goBack()">{{goBackButtonLabel}}</button>

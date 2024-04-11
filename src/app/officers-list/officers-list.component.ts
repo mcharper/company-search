@@ -18,6 +18,7 @@ export class OfficersListComponent {
   officersList: any[] = [];
   companyNumberLabel = "Company Number";
   goBackButtonLabel = "Back";
+  zeroResultsMessage = "Sorry, we did not find any officers for this company.";
 
   constructor(private route: ActivatedRoute,
     private companySearchService: CompanySearchService,
