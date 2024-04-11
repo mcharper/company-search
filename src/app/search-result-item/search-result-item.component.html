@@ -3,9 +3,7 @@
 </h2>
 
 <p>
-  <strong>{{companyDetails.company_number}}</strong> - {{companyDetails.description}}
+  <strong>{{companyDetails.company_number}}</strong> - {{ getSlug(companyDetails.date_of_creation) }}
 </p>
 
 <p>{{companyDetails.address_snippet}}</p>
-
-

@@ -22,4 +22,5 @@ export class SearchResultsComponent {
     this.fragment = this.route.snapshot.paramMap.get('fragment') || "";
     this.companySearchService.getCompaniesByFragment(this.fragment).subscribe((data: any) => this.searchResults = data.items);
   }
+
 }

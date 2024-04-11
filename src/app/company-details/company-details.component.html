@@ -10,7 +10,7 @@
   <dd>{{ companyDetails.company_status }}</dd>
 
   <dt>{{ companyTypeLabel }}</dt>
-  <dd>{{ companyDetails.company_type }}</dd>
+  <dd>{{ humaniseCompanyType(companyDetails.company_type) }}</dd>
 
   <dt>{{ incorporationDateLabel }}</dt>
   <dd>{{ humaniseDate(companyDetails.date_of_creation) }}</dd>

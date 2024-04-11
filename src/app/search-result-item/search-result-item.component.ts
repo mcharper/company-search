@@ -12,4 +12,9 @@ export class SearchResultItemComponent {
 
   ngOnInit() {
   }
+
+  getSlug(dt: string) {
+    const dateOfIncorporation = new Date(dt).toDateString();
+    return `incorporated on ${dateOfIncorporation}`;
+  }
 }

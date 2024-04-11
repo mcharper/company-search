@@ -1,7 +1,11 @@
 <h1>{{title}}</h1>
 
-<ul>
+<ul *ngIf="searchResults" >
   <li *ngFor="let searchResult of searchResults">
     <app-search-result-item [companyDetails]="searchResult" />
   </li>
 </ul>
+
+<div *ngIf="!searchResults">
+  <p>Sorry, we did not find any results to match your query.</p>
+</div>

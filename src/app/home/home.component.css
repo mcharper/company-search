@@ -15,3 +15,12 @@ form > * {
   font-size: larger;
   margin: 0.5rem;
 }
+
+button {
+  background-color: #635362;
+  border-radius: 0.5rem;
+  color: white;
+  margin-top: 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+

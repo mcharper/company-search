@@ -27,6 +27,20 @@ export class CompanyDetailsComponent {
   }
 
   humaniseDate(dt: string) {
-    return new Date(dt).toDateString()
+    if (!isNaN(new Date(dt).getTime())) {
+      return new Date(dt).toDateString();
+    } else {
+      return "(date was not supplied or was invalid)"
+
+    }
+  }
+
+  humaniseCompanyType(companyType: string) {
+    const companyTypeDescriptions: any = {
+      "ltd": "Private Limited Company",
+      "plc": "Public Limited Company"
+    };
+
+    return (companyType in companyTypeDescriptions) ? companyTypeDescriptions[companyType] : companyType;
   }
 }

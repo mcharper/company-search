@@ -2,9 +2,13 @@
 
 <p>{{companyNumberLabel}} <strong>{{companyNumber}}</strong></p>
 
-<ul>
+<ul *ngIf="officersList.length > 0">
   <li *ngFor="let officer of officersList">
     <span class="name">{{officer.name}}</span>
     <span>{{officer.officer_role}}</span>
   </li>
 </ul>
+
+<div *ngIf="officersList.length == 0" >
+  <p>Sorry, we did not find any officers for this company.</p>
+</div>

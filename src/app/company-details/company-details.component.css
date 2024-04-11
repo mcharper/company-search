@@ -4,3 +4,18 @@ dd {
   margin-left: 0;
   margin-bottom: 1rem;
 }
+
+dd::first-letter {
+  text-transform: capitalize;
+}
+
+a {
+  background-color: #635362;
+  border-radius: 0.5rem;
+  color: white;
+  display: block;
+  width: 10rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
