@@ -1,5 +1,5 @@
 import { of } from "rxjs";
-import { COMPANIES_BY_NAME } from "../src/app/mockData/getCompaniesByName";
+import { COMPANIES_BY_NAME } from "../mockData/getCompaniesByName";
 
 const TestCompany = COMPANIES_BY_NAME;
 
