@@ -21,6 +21,5 @@ export class SearchResultsComponent {
   ngOnInit() {
     this.fragment = this.route.snapshot.paramMap.get('fragment') || "";
     this.companySearchService.getCompaniesByFragment(this.fragment).subscribe((data: any) => this.searchResults = data.items);
-    // this.companySearchService.getOfficersList("10241297").subscribe((data: any[]) => console.log(data));
   }
 }

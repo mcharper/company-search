@@ -11,6 +11,5 @@ export class SearchResultItemComponent {
   @Input() companyDetails: any;
 
   ngOnInit() {
-    console.log(this.companyDetails);
   }
 }
